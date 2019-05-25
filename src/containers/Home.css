@@ -5,6 +5,9 @@
 
 .Home .lander h1 {
   font-family: "Open Sans", sans-serif;
+  font-size: 1.9em;
+  text-transform: uppercase;
+  letter-spacing: 1em;
   font-weight: 600;
 }
 
