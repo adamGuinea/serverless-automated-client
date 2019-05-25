@@ -28,7 +28,7 @@ export default ({ childProps }) => (
         props={childProps}
       />
       <AuthenticatedRoute
-        path="/settings"
+        path="/billings"
         exact
         component={Settings}
         props={childProps}
