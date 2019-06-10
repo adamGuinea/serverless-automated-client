@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
+import FacebookButton from "../components/FacebookButton";
 import "./Login.css";
 
 export default class Login extends Component {
@@ -19,11 +20,15 @@ export default class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
+  handleFbLogin = () => {
+    this.props.userHasAuthenticated(true);
+  };
+
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
-  }
+  };
 
   handleSubmit = async event => {
     event.preventDefault();
@@ -37,11 +42,13 @@ export default class Login extends Component {
       alert(e.message);
       this.setState({ isLoading: false });
     }
-  }
+  };
 
   render() {
     return (
       <div className="Login">
+        <FacebookButton onLogin={this.handleFbLogin} />
+        <hr />
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>

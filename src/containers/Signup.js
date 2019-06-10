@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   HelpBlock,
   FormGroup,
@@ -6,6 +6,7 @@ import {
   ControlLabel
 } from "react-bootstrap";
 import { Auth } from "aws-amplify";
+import FacebookButton from "../components/FacebookButton";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
 
@@ -35,11 +36,15 @@ export default class Signup extends Component {
     return this.state.confirmationCode.length > 0;
   }
 
+  handleFbLogin = () => {
+    this.props.userHasAuthenticated(true);
+  };
+
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
-  }
+  };
 
   handleSubmit = async event => {
     event.preventDefault();
@@ -59,7 +64,7 @@ export default class Signup extends Component {
     }
 
     this.setState({ isLoading: false });
-  }
+  };
 
   handleConfirmationSubmit = async event => {
     event.preventDefault();
@@ -76,7 +81,7 @@ export default class Signup extends Component {
       alert(e.message);
       this.setState({ isLoading: false });
     }
-  }
+  };
 
   renderConfirmationForm() {
     return (
@@ -107,6 +112,8 @@ export default class Signup extends Component {
   renderForm() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <FacebookButton onLogin={this.handleFbLogin} />
+        <hr />
         <FormGroup controlId="email" bsSize="large">
           <ControlLabel>Email</ControlLabel>
           <FormControl
@@ -147,11 +154,13 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup">
-        {this.state.newUser === null
-          ? this.renderForm()
-          : this.renderConfirmationForm()}
-      </div>
+      <Fragment>
+        <div className="Signup">
+          {this.state.newUser === null
+            ? this.renderForm()
+            : this.renderConfirmationForm()}
+        </div>
+      </Fragment>
     );
   }
 }
