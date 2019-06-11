@@ -47,9 +47,9 @@ export default class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <FacebookButton onLogin={this.handleFbLogin} />
-        <hr />
         <form onSubmit={this.handleSubmit}>
+          <FacebookButton onLogin={this.handleFbLogin} />
+          <hr />
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
