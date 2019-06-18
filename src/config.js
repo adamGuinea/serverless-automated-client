@@ -30,14 +30,10 @@ const prod = {
     URL: "https://tnj6s3enn4.execute-api.us-east-1.amazonaws.com/prod"
   },
   cognito: {
-    // REGION: "us-east-1",
-    REGION: "us-east-2",
-    USER_POOL_ID: "us-east-2_ScTF6HUtl",
-    // USER_POOL_ID: "us-east-1_5WfwuPg3L",
-    APP_CLIENT_ID: "5ii2q26on0k79nj5su96v2k3iv",
-    // APP_CLIENT_ID: "4f0g15nigsvvfilgt1i5oatb8t",
-    IDENTITY_POOL_ID: "us-east-2:67a66cb7-97c7-4661-9a4f-85193163a993"
-    // IDENTITY_POOL_ID: "us-east-1:a40960a9-3506-4792-99da-9b252951b2f6"
+    REGION: "us-east-1",
+    USER_POOL_ID: "us-east-1_5WfwuPg3L",
+    APP_CLIENT_ID: "4f0g15nigsvvfilgt1i5oatb8t",
+    IDENTITY_POOL_ID: "us-east-1:a40960a9-3506-4792-99da-9b252951b2f6"
   },
   social: {
     FB: "305288310414976"
