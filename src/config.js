@@ -1,18 +1,18 @@
 const dev = {
   STRIPE_KEY: "pk_test_OMMnnbwMLR2If0crq5Xl25ym00aQbDPQKa",
   s3: {
-    REGION: "us-east-1",
+    REGION: "us-east-2",
     BUCKET: "notes-app-2-api-dev-attachmentsbucket-y7gj4lanfs8p"
   },
   apiGateway: {
-    REGION: "us-east-1",
+    REGION: "us-east-2",
     URL: "https://a0xwxcud6e.execute-api.us-east-1.amazonaws.com/dev"
   },
   cognito: {
-    REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_vDNs1Haq9",
-    APP_CLIENT_ID: "9qnf4vb4ipumhl2hvlul57iip",
-    IDENTITY_POOL_ID: "us-east-1:58c2a492-eb21-4154-8c50-54cf4580282f"
+    REGION: "us-east-2",
+    USER_POOL_ID: "us-east-2_ScTF6HUtl",
+    APP_CLIENT_ID: "5ii2q26on0k79nj5su96v2k3iv",
+    IDENTITY_POOL_ID: "us-east-2:67a66cb7-97c7-4661-9a4f-85193163a993"
   },
   social: {
     FB: "305288310414976"

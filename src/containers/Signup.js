@@ -38,6 +38,7 @@ export default class Signup extends Component {
 
   handleFbLogin = () => {
     this.props.userHasAuthenticated(true);
+    this.props.history.push("/");
   };
 
   handleChange = event => {
