@@ -22,18 +22,18 @@ const dev = {
 const prod = {
   STRIPE_KEY: "pk_test_OMMnnbwMLR2If0crq5Xl25ym00aQbDPQKa",
   s3: {
-    REGION: "us-east-1",
-    BUCKET: "notes-app-2-api-prod-attachmentsbucket-tautl0m40kbx"
+    REGION: "us-east-2",
+    BUCKET: "notes-app-2-api-prod-attachmentsbucket-oap73zut2q8f"
   },
   apiGateway: {
-    REGION: "us-east-1",
-    URL: "https://tnj6s3enn4.execute-api.us-east-1.amazonaws.com/prod"
+    REGION: "us-east-2",
+    URL: "https://hd58q0nv57.execute-api.us-east-2.amazonaws.com/prod"
   },
   cognito: {
-    REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_5WfwuPg3L",
-    APP_CLIENT_ID: "4f0g15nigsvvfilgt1i5oatb8t",
-    IDENTITY_POOL_ID: "us-east-1:a40960a9-3506-4792-99da-9b252951b2f6"
+    REGION: "us-east-2",
+    USER_POOL_ID: "us-east-2_IQRZo4yH1",
+    APP_CLIENT_ID: "2k7nl2v93ho1travh05r9n9i71",
+    IDENTITY_POOL_ID: "us-east-2:eebb7faf-95df-48b1-be06-4f16d9b2db26"
   },
   social: {
     FB: "305288310414976"
