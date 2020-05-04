@@ -7,6 +7,7 @@ import Login from './containers/Login';
 import Signup from './containers/Signup';
 import NewNote from './containers/NewNote';
 import ResetPassword from './containers/ResetPassword';
+import ChangePassword from "./containers/ChangePassword";
 import NotFound from './containers/NotFound';
 import AppliedRoute from './components/AppliedRoute';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
@@ -31,6 +32,12 @@ export default ({ childProps }) => (
       exact
       path="/login/reset"
       component={ResetPassword}
+      props={childProps}
+    />
+    <AuthenticatedRoute
+      exact
+      path="/billings/password"
+      component={ChangePassword}
       props={childProps}
     />
     <AuthenticatedRoute

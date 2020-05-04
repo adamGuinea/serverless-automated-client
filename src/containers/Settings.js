@@ -47,10 +47,10 @@ export default class Settings extends Component {
   render() {
     return (
       <div className="Settings">
-        <LinkContainer to="/settings/email">
+        <LinkContainer to="/billings/email">
           <LoaderButton text="Change Email" block bsSize="large" />
         </LinkContainer>
-        <LinkContainer to="/settings/password">
+        <LinkContainer to="/billings/password">
           <LoaderButton text="Change Password" block bsSize="large" />
         </LinkContainer>
         <hr />
