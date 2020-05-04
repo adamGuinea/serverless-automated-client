@@ -1,22 +1,24 @@
-import React, { Component } from "react";
-import { API } from "aws-amplify";
-import { Elements, StripeProvider } from "react-stripe-elements";
-import BillingForm from "../components/BillingForm";
-import config from "../config";
-import "./Settings.css";
+import React, { Component } from 'react';
+import { API } from 'aws-amplify';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Elements, StripeProvider } from 'react-stripe-elements';
+import LoaderButton from '../components/LoaderButton';
+import BillingForm from '../components/BillingForm';
+import config from '../config';
+import './Settings.css';
 
 export default class Settings extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: false
+      isLoading: false,
     };
   }
 
   billUser(details) {
-    return API.post("notes", "/billing", {
-      body: details
+    return API.post('notes', '/billing', {
+      body: details,
     });
   }
 
@@ -31,11 +33,11 @@ export default class Settings extends Component {
     try {
       await this.billUser({
         storage,
-        source: token.id
+        source: token.id,
       });
 
-      alert("Your card has been charged successfully!");
-      this.props.history.push("/");
+      alert('Your card has been charged successfully!');
+      this.props.history.push('/');
     } catch (e) {
       alert(e);
       this.setState({ isLoading: false });
@@ -45,6 +47,13 @@ export default class Settings extends Component {
   render() {
     return (
       <div className="Settings">
+        <LinkContainer to="/settings/email">
+          <LoaderButton text="Change Email" block bsSize="large" />
+        </LinkContainer>
+        <LinkContainer to="/settings/password">
+          <LoaderButton text="Change Password" block bsSize="large" />
+        </LinkContainer>
+        <hr />
         <StripeProvider apiKey={config.STRIPE_KEY}>
           <Elements>
             <BillingForm
