@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@sentry/browser": "^5.15.5",
+    "@sentry/browser": "^7.119.1",
     "aws-amplify": "^1.1.6",
     "react": "^16.10.2",
     "react-bootstrap": "^0.32.4",
